@@ -1,1 +1,1 @@
-# [link to GitHub Pages HW6](https://dimamarjan.github.io/goit-markup-hw-06/ "Задание №6")
+# [link to GitHub Pages HW7](https://dimamarjan.github.io/goit-markup-hw-07/ "Задание №7")
