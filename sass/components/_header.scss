@@ -1,0 +1,96 @@
+.header {
+  border-bottom: 1px solid #ececec;
+}
+
+.navigation {
+  margin: 0 auto;
+  width: 1230px;
+  padding: 0px 15px;
+
+  display: flex;
+  align-items: center;
+}
+
+.main-nav,
+.contact-nav {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  display: flex;
+}
+
+.navigation .contact-nav {
+  margin-left: auto;
+}
+
+.navigation .link {
+  position: relative;
+  text-decoration: none;
+  color: var(--navigation-text-color);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  padding: 25px 0;
+
+  transition: color var(--animation-timing);
+}
+
+.navigation .link.border::after,
+.navigation .link.border.current::after {
+  position: absolute;
+
+  content: "";
+  display: block;
+  height: 4px;
+  width: 100%;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+
+  bottom: 0;
+
+  transition: opacity var(--animation-timing);
+}
+
+.navigation .link.border::after {
+  opacity: 0;
+
+  transition: opacity var(--animation-timing);
+}
+
+.navigation .link.border.current::after {
+  opacity: 1;
+}
+
+.navigation .link.border:hover::after,
+.navigation .link.border:focus::after {
+  opacity: 1;
+}
+
+.navigation .nav-item:not(:last-child) {
+  margin-right: 50px;
+}
+
+.contact-nav .link {
+  color: var(--secondary-text-color);
+  display: flex;
+  align-items: center;
+
+  transition: color var(--animation-timing);
+}
+
+.nav-item .nav-icon {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+  margin-right: 10px;
+}
+
+.main-nav .link:hover,
+.main-nav .link:focus,
+.contact-nav .link:hover,
+.contact-nav .link:focus {
+  outline: none;
+
+  color: var(--accent-color);
+}

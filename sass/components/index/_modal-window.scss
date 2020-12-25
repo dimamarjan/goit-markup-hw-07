@@ -1,0 +1,253 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+
+  opacity: 1;
+  transition: opacity var(--animation-timing);
+}
+
+.backdrop .modal {
+  position: absolute;
+
+  min-width: 528px;
+  min-height: 581px;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: var(--accent-color-text);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  transition: transform var(--animation-timing);
+}
+
+.modal .close-btn {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  background-color: transparent;
+  display: block;
+
+  align-items: center;
+  justify-content: center;
+
+  top: 8px;
+  right: 8px;
+
+  width: 30px;
+  height: 30px;
+}
+
+.modal .close-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  fill: currentColor;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  margin: 0;
+}
+
+.close-btn:hover .close-icon,
+.close-btn:focus .close-icon {
+  color: var(--accent-color);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+
+  transition: opacity var(--animation-timing);
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) translateY(100%) scale(0);
+
+  transition: transform var(--animation-timing);
+}
+
+.modal .modal-content {
+  padding: 40px;
+}
+
+.modal .modal-title {
+  margin-top: 0;
+  margin-bottom: 12px;
+
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.5;
+  text-align: center;
+  letter-spacing: var(--letter-spacing-main);
+}
+
+.modal .form-section,
+.modal .form-fields {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-fields .form-input {
+  width: 448px;
+  height: 40px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+
+  padding-left: 42px;
+
+  transition: border-color var(--animation-timing);
+}
+
+.form-fields .form-label {
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  color: var(--secondary-text-color);
+  letter-spacing: 0.01em;
+
+  margin-bottom: 4px;
+}
+
+.form-fields .text-field {
+  position: relative;
+  margin-bottom: 10px;
+  color: var(--navigation-text-color);
+}
+
+.form-fields .form-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 12px;
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+
+  transition: color var(--animation-timing);
+}
+
+.text-field:hover .form-icon,
+.text-field:focus-within .form-icon {
+  color: var(--accent-color);
+}
+
+.text-field:hover .form-input,
+.text-field:focus-within .form-input,
+.comment-section:hover .form-comment,
+.comment-section:focus-within .form-comment {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+.form-fields .comment-section {
+  margin-bottom: 20px;
+}
+
+.form-fields .form-comment {
+  display: block;
+  width: 448px;
+  height: 120px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  resize: none;
+  padding: 12px 16px;
+
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 1.14;
+  letter-spacing: var(--letter-spacing-minimal);
+
+  transition: border-color var(--animation-timing);
+}
+
+.form-fields .form-comment::placeholder {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: var(--letter-spacing-minimal);
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.policy {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.policy .checkbox-icon::before {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 15px;
+  border: 2px solid var(--navigation-text-color);
+  border-radius: 2px;
+  margin-left: 13px;
+  margin-right: 7px;
+
+  transition: background-color var(--animation-timing),
+    background-image var(--animation-timing),
+    background-size var(--animation-timing), border var(--animation-timing);
+}
+
+.policy-checkbox:checked + .checkbox-icon::before {
+  background-color: var(--accent-color);
+  background-image: url("../images/checked.svg");
+  background-size: contain;
+  border: transparent;
+
+  transition: background-color var(--animation-timing),
+    background-image var(--animation-timing),
+    background-size var(--animation-timing), border var(--animation-timing);
+}
+
+.policy .policy-text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  color: var(--secondary-text-color);
+  letter-spacing: var(--letter-spacing-main);
+}
+
+.policy .policy-link {
+  color: var(--accent-color);
+}
+
+.submit-button {
+  display: inline-block;
+  width: 200px;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #2196f3;
+  color: var(--accent-color-text);
+  border-radius: 4px;
+  border: none;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.9;
+
+  letter-spacing: var(--letter-spacing-secondary);
+
+  transition: background-color var(--animation-timing);
+}
+
+.modal .submit-button:hover,
+.modal .submit-button:focus {
+  background-color: #188ce8;
+}
