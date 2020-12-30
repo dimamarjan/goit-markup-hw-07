@@ -253,6 +253,9 @@ body {
   display: block;
   margin-bottom: 20px;
 }
+.address .logo-address .logo-main {
+  color: var(--accent-color);
+}
 .address .address-links {
   padding: 0px;
   list-style: none;

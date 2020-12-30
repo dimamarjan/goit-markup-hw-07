@@ -27,6 +27,10 @@
     text-decoration: none;
     display: block;
     margin-bottom: 20px;
+
+    .logo-main {
+      color: var(--accent-color);
+    }
   }
   .address-links {
     padding: 0px;
