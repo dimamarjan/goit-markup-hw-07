@@ -226,6 +226,9 @@ body {
   background-color: var(--address-bg-color);
   font-style: normal;
 }
+.address .submit-section {
+  margin-left: auto;
+}
 .address .section {
   background-color: var(--address-bg-color);
   padding-top: 60px;
